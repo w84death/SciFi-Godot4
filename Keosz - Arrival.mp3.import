@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcckfjvc8o4t3"
+path="res://.godot/imported/Keosz - Arrival.mp3-84f18f83057c0d3505cdd289cc0133ca.mp3str"
+
+[deps]
+
+source_file="res://Keosz - Arrival.mp3"
+dest_files=["res://.godot/imported/Keosz - Arrival.mp3-84f18f83057c0d3505cdd289cc0133ca.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
