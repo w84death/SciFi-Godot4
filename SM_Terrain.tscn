@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://da1cjwcbgatiw"]
+
+[ext_resource type="PackedScene" uid="uid://ypdekh70b1q8" path="res://SM_Terrain.glb" id="1_qwpaa"]
+[ext_resource type="Material" uid="uid://dd6ns5mftwqr1" path="res://M_Rock.tres" id="2_wm2bn"]
+
+[node name="SM_Terrain" instance=ExtResource( "1_qwpaa" )]
+
+[node name="SM_Terrain2" parent="." index="0"]
+surface_material_override/0 = ExtResource( "2_wm2bn" )

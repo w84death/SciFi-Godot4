@@ -1,0 +1,119 @@
+[gd_scene load_steps=5 format=3 uid="uid://e3oq4cm45dgg"]
+
+[ext_resource type="PackedScene" uid="uid://0pfeyu2dcsc7" path="res://SM_Skeletor.tscn" id="1_76iyy"]
+[ext_resource type="PackedScene" uid="uid://bn20ad882b0lw" path="res://SM_Highway_Module.tscn" id="2_w4o6r"]
+[ext_resource type="PackedScene" uid="uid://da1cjwcbgatiw" path="res://SM_Terrain.tscn" id="3_hybi7"]
+[ext_resource type="PackedScene" uid="uid://34yefuuopdi4" path="res://SM_OilRig.tscn" id="4_wu1k4"]
+
+[node name="World" type="Node3D"]
+script = null
+
+[node name="SM_Skeletor" parent="." instance=ExtResource( "1_76iyy" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.2017, 1.67154, 11.8037)
+
+[node name="SM_Skeletor2" parent="." instance=ExtResource( "1_76iyy" )]
+transform = Transform3D(0.992745, 0.120241, 0, -0.120241, 0.992745, 0, 0, 0, 1, 47.4187, 1.67154, 11.8037)
+
+[node name="SM_Skeletor3" parent="." instance=ExtResource( "1_76iyy" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.069, 1.67154, 11.8037)
+
+[node name="SM_Skeletor4" parent="." instance=ExtResource( "1_76iyy" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.893206, 1.67154, 11.8037)
+
+[node name="SM_Skeletor5" parent="." instance=ExtResource( "1_76iyy" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.2017, 1.67154, -11.8655)
+
+[node name="SM_Skeletor6" parent="." instance=ExtResource( "1_76iyy" )]
+transform = Transform3D(0.992745, 0.120241, 0, -0.120241, 0.992745, 0, 0, 0, 1, 47.4187, 1.67154, -11.8655)
+
+[node name="SM_Skeletor7" parent="." instance=ExtResource( "1_76iyy" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.069, 1.67154, -11.8655)
+
+[node name="SM_Skeletor8" parent="." instance=ExtResource( "1_76iyy" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.893206, 1.67154, -11.8655)
+
+[node name="SM_Highway_Module" parent="." instance=ExtResource( "2_w4o6r" )]
+
+[node name="Cables" parent="SM_Highway_Module/Highway_Module" index="0"]
+visible = true
+
+[node name="SM_Highway_Module8" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="SM_Highway_Module9" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0)
+
+[node name="SM_Highway_Module10" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 0)
+
+[node name="SM_Highway_Module11" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 0)
+
+[node name="SM_Highway_Module2" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="SM_Highway_Module3" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
+
+[node name="Cables" parent="SM_Highway_Module3/Highway_Module" index="0"]
+visible = true
+
+[node name="SM_Highway_Module4" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 0)
+
+[node name="Cables" parent="SM_Highway_Module4/Highway_Module" index="0"]
+visible = true
+
+[node name="SM_Highway_Module6" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
+
+[node name="SM_Highway_Module12" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 0)
+
+[node name="SM_Highway_Module7" parent="." instance=ExtResource( "2_w4o6r" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, 0)
+
+[node name="SM_Terrain" parent="." instance=ExtResource( "3_hybi7" )]
+transform = Transform3D(-0.608443, 0, 0.793598, 0, 1, 0, -0.793598, 0, -0.608443, 50.2065, 17.7096, -29.2016)
+
+[node name="SM_OilRig" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.2141, -0.295692, -19.6687)
+
+[node name="SM_OilRig2" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6415, 1.14085, -19.6687)
+
+[node name="SM_OilRig3" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.2141, 4.30495, 18.3426)
+
+[node name="SM_OilRig4" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6415, 2.46889, 18.3426)
+
+[node name="SM_OilRig9" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.3102, 11.1616, -29.9116)
+
+[node name="SM_OilRig10" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.783, -0.0367005, 31.6835)
+
+[node name="SM_OilRig11" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.6502, -0.0367005, 14.333)
+
+[node name="SM_OilRig12" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.6502, 5.70239, -15.6602)
+
+[node name="SM_OilRig5" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.3698, -0.295692, -19.6687)
+
+[node name="SM_OilRig6" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.7972, 1.14085, -19.6687)
+
+[node name="SM_OilRig7" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.3698, 4.30495, 18.3426)
+
+[node name="SM_OilRig8" parent="." instance=ExtResource( "4_wu1k4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.7972, 2.46889, 18.3426)
+
+[editable path="SM_Highway_Module"]
+[editable path="SM_Highway_Module8"]
+[editable path="SM_Highway_Module9"]
+[editable path="SM_Highway_Module3"]
+[editable path="SM_Highway_Module4"]

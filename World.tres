@@ -1,0 +1,207 @@
+[gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://bjeggu6cb6tg5"]
+
+[sub_resource type="OpenSimplexNoise" id="OpenSimplexNoise_cxpdy"]
+period = 47.0
+
+[sub_resource type="NoiseTexture" id="NoiseTexture_a6sva"]
+width = 4096
+height = 4096
+seamless = true
+noise = SubResource( "OpenSimplexNoise_cxpdy" )
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_fahgq"]
+output_port_for_preview = 0
+default_input_values = []
+expanded_output_ports = []
+texture = SubResource( "NoiseTexture_a6sva" )
+
+[sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_ww8u3"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0)]
+expanded_output_ports = []
+operator = 7
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_rjm3l"]
+default_input_values = []
+expanded_output_ports = []
+constant = Color(0.132813, 0.0833797, 0.0225876, 1)
+
+[sub_resource type="NoiseTexture" id="NoiseTexture_hsofr"]
+width = 4096
+height = 4096
+seamless = true
+as_normal_map = true
+bump_strength = 43.7
+noise = SubResource( "OpenSimplexNoise_cxpdy" )
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_3q07x"]
+output_port_for_preview = 0
+default_input_values = []
+expanded_output_ports = []
+texture = SubResource( "NoiseTexture_hsofr" )
+
+[sub_resource type="OpenSimplexNoise" id="OpenSimplexNoise_wairx"]
+period = 71.4
+
+[sub_resource type="NoiseTexture" id="NoiseTexture_sssbb"]
+seamless = true
+noise = SubResource( "OpenSimplexNoise_wairx" )
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_jhuc3"]
+output_port_for_preview = 0
+default_input_values = []
+expanded_output_ports = []
+texture = SubResource( "NoiseTexture_sssbb" )
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_wuuh4"]
+default_input_values = [0, 0.0, 1, 0.0, 2, 0.0]
+expanded_output_ports = []
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_mh8av"]
+default_input_values = []
+expanded_output_ports = []
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_c75n3"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0)]
+expanded_output_ports = []
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_qsi28"]
+default_input_values = [0, Vector3(0, 0, 0)]
+expanded_output_ports = []
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_78lh7"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(10, 10, 10)]
+expanded_output_ports = []
+operator = 2
+
+[resource]
+code = "shader_type spatial;
+uniform sampler2D tex_vtx_2;
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_5;
+
+
+
+void vertex() {
+// Input:4
+	vec3 n_out4p0 = VERTEX;
+
+
+// Texture2D:2
+	vec4 tex_vtx_2_read = texture(tex_vtx_2, UV.xy);
+	vec3 n_out2p0 = tex_vtx_2_read.rgb;
+	float n_out2p1 = tex_vtx_2_read.a;
+
+
+// VectorDecompose:7
+	float n_out7p0 = n_out2p0.x;
+	float n_out7p1 = n_out2p0.y;
+	float n_out7p2 = n_out2p0.z;
+
+
+// VectorCompose:3
+	float n_in3p0 = 0.00000;
+	float n_in3p2 = 0.00000;
+	vec3 n_out3p0 = vec3(n_in3p0, n_out7p0, n_in3p2);
+
+
+// VectorOp:8
+	vec3 n_in8p1 = vec3(10.00000, 10.00000, 10.00000);
+	vec3 n_out8p0 = n_out3p0 * n_in8p1;
+
+
+// VectorOp:6
+	vec3 n_out6p0 = n_out4p0 + n_out8p0;
+
+
+// Output:0
+	VERTEX = n_out6p0;
+
+
+}
+
+void fragment() {
+// ColorConstant:4
+	vec3 n_out4p0 = vec3(0.132813, 0.083380, 0.022588);
+	float n_out4p1 = 1.000000;
+
+
+// Texture2D:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+
+	vec3 n_out3p0;
+// ColorOp:3
+	{
+		float base = n_out4p0.x;
+		float blend = n_out2p0.x;
+		if (base < 0.5) {
+			n_out3p0.x = (base * (blend + 0.5));
+		} else {
+			n_out3p0.x = (1.0 - (1.0 - base) * (1.0 - (blend - 0.5)));
+		}
+	}
+	{
+		float base = n_out4p0.y;
+		float blend = n_out2p0.y;
+		if (base < 0.5) {
+			n_out3p0.y = (base * (blend + 0.5));
+		} else {
+			n_out3p0.y = (1.0 - (1.0 - base) * (1.0 - (blend - 0.5)));
+		}
+	}
+	{
+		float base = n_out4p0.z;
+		float blend = n_out2p0.z;
+		if (base < 0.5) {
+			n_out3p0.z = (base * (blend + 0.5));
+		} else {
+			n_out3p0.z = (1.0 - (1.0 - base) * (1.0 - (blend - 0.5)));
+		}
+	}
+
+
+// Texture2D:5
+	vec4 tex_frg_5_read = texture(tex_frg_5, UV.xy);
+	vec3 n_out5p0 = tex_frg_5_read.rgb;
+	float n_out5p1 = tex_frg_5_read.a;
+
+
+// Output:0
+	ALBEDO = n_out3p0;
+	NORMAL = n_out5p0;
+
+
+}
+"
+graph_offset = Vector2(-286.581, -8.59351)
+engine_version = {
+"major": 4,
+"minor": 0
+}
+nodes/vertex/0/position = Vector2(1120, 40)
+nodes/vertex/2/node = SubResource( "VisualShaderNodeTexture_jhuc3" )
+nodes/vertex/2/position = Vector2(80, 40)
+nodes/vertex/3/node = SubResource( "VisualShaderNodeVectorCompose_wuuh4" )
+nodes/vertex/3/position = Vector2(540, 120)
+nodes/vertex/4/node = SubResource( "VisualShaderNodeInput_mh8av" )
+nodes/vertex/4/position = Vector2(320, 40)
+nodes/vertex/6/node = SubResource( "VisualShaderNodeVectorOp_c75n3" )
+nodes/vertex/6/position = Vector2(940, 20)
+nodes/vertex/7/node = SubResource( "VisualShaderNodeVectorDecompose_qsi28" )
+nodes/vertex/7/position = Vector2(320, 140)
+nodes/vertex/8/node = SubResource( "VisualShaderNodeVectorOp_78lh7" )
+nodes/vertex/8/position = Vector2(740, 120)
+nodes/vertex/connections = PackedInt32Array(2, 0, 7, 0, 6, 0, 0, 0, 7, 0, 3, 1, 3, 0, 8, 0, 8, 0, 6, 1, 4, 0, 6, 0)
+nodes/fragment/0/position = Vector2(760, 60)
+nodes/fragment/2/node = SubResource( "VisualShaderNodeTexture_fahgq" )
+nodes/fragment/2/position = Vector2(-240, 60)
+nodes/fragment/3/node = SubResource( "VisualShaderNodeColorOp_ww8u3" )
+nodes/fragment/3/position = Vector2(480, 100)
+nodes/fragment/4/node = SubResource( "VisualShaderNodeColorConstant_rjm3l" )
+nodes/fragment/4/position = Vector2(180, 60)
+nodes/fragment/5/node = SubResource( "VisualShaderNodeTexture_3q07x" )
+nodes/fragment/5/position = Vector2(0, 440)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 0, 5, 0, 0, 7, 4, 0, 3, 0, 2, 0, 3, 1)
