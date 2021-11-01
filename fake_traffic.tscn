@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck8bnij0yynhh"]
+
+[ext_resource type="PackedScene" uid="uid://4mdhy3td1bf7" path="res://SM_Car.tscn" id="1_7v3gx"]
+
+[node name="fake_traffic" type="Node3D"]
+script = null
+
+[node name="SM_Car" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.5201, 15.9921, -0.0804666)
+
+[node name="SM_Car3" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.7607, 15.9921, -0.0804666)
+
+[node name="SM_Car4" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.7607, 16.7732, -0.631678)
+
+[node name="SM_Car5" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0672, 16.7732, -0.631678)
+
+[node name="SM_Car6" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.0617, 16.7732, -0.631678)
+
+[node name="SM_Car2" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.7715, 15.9921, -0.0804666)
+
+[node name="SM_Car7" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5193, 15.9921, -0.0804666)
+
+[node name="SM_Car8" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7599, 15.9921, -0.0804666)
+
+[node name="SM_Car9" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7599, 16.7732, -0.631678)
+
+[node name="SM_Car10" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0664, 16.7732, -0.631678)
+
+[node name="SM_Car11" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0609, 16.7732, -0.631678)
+
+[node name="SM_Car12" parent="." instance=ExtResource( "1_7v3gx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.7707, 15.9921, -0.0804666)
