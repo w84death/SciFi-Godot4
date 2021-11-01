@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://4mdhy3td1bf7"]
+
+[ext_resource type="PackedScene" uid="uid://b7avh4q3hr860" path="res://SM_Car.glb" id="1_sv4vr"]
+[ext_resource type="Material" uid="uid://divhpl5m2muv7" path="res://M_Metal.material" id="2_jgt3t"]
+[ext_resource type="Material" uid="uid://of0aya0c628o" path="res://M_Light_Beacon.material" id="3_j5wq5"]
+
+[node name="SM_Car" instance=ExtResource( "1_sv4vr" )]
+
+[node name="Car" parent="." index="0"]
+surface_material_override/0 = ExtResource( "2_jgt3t" )
+surface_material_override/1 = ExtResource( "3_j5wq5" )

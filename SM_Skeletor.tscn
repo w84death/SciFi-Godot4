@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://0pfeyu2dcsc7"]
+
+[ext_resource type="PackedScene" uid="uid://6v5w1v31cj8g" path="res://SM_Skeletor.glb" id="1_bwb4g"]
+
+[node name="SM_Skeletor" instance=ExtResource( "1_bwb4g" )]

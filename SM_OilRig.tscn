@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://34yefuuopdi4"]
+
+[ext_resource type="PackedScene" uid="uid://o6nh6hhhygjc" path="res://SM_OilRig.glb" id="1_tgwvw"]
+[ext_resource type="Material" uid="uid://voiwwv23jkyy" path="res://M_Cement.material" id="2_scn0w"]
+[ext_resource type="Material" uid="uid://of0aya0c628o" path="res://M_Light_Beacon.material" id="3_d7kh4"]
+[ext_resource type="Material" uid="uid://divhpl5m2muv7" path="res://M_Metal.material" id="4_x5qh6"]
+[ext_resource type="Material" uid="uid://cuuy11bt74mop" path="res://fire.material" id="5_uhgjh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tl04k"]
+material = ExtResource( "5_uhgjh" )
+radial_segments = 8
+rings = 16
+
+[sub_resource type="Curve" id="Curve_te5gl"]
+_data = [Vector2(0, 0), 0.0, 5.68182, 0, 0, Vector2(0.44, 0.318182), 2.1645, 2.1645, 0, 0, Vector2(1, 1), -0.354181, 0.0, 0, 0]
+
+[sub_resource type="Gradient" id="Gradient_j6873"]
+offsets = PackedFloat32Array(0.0301724, 0.049569, 0.0969828, 0.293103, 0.555066, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.84375, 0, 1, 1, 0, 0, 1, 0.631373, 0.631373, 0.631373, 0.733333, 0.686275, 0.686275, 0.686275, 0.317647, 0, 0, 0, 0)
+
+[node name="SM_OilRig" instance=ExtResource( "1_tgwvw" )]
+
+[node name="SM_OilRig2" parent="." index="0"]
+surface_material_override/0 = ExtResource( "2_scn0w" )
+surface_material_override/1 = ExtResource( "3_d7kh4" )
+
+[node name="Cage" parent="SM_OilRig2" index="0"]
+surface_material_override/0 = ExtResource( "4_x5qh6" )
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 34.2004, 0)
+amount = 128
+lifetime = 6.0
+randomness = 1.0
+mesh = SubResource( "SphereMesh_tl04k" )
+emission_shape = 2
+emission_box_extents = Vector3(0.2, 1, 0.2)
+spread = 90.0
+gravity = Vector3(1, -2, 1)
+scale_amount_max = 8.0
+scale_amount_curve = SubResource( "Curve_te5gl" )
+color = Color(0.243137, 0.243137, 0.243137, 1)
+color_ramp = SubResource( "Gradient_j6873" )
+script = null
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32.9799, 0)
+visible = false
+light_color = Color(1, 0.831373, 0, 1)
+light_energy = 20.0
+omni_range = 1.79201
+script = null
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0137167, 32.8782, 0.0667492)
+light_color = Color(1, 0.784314, 0.00392157, 1)
+light_energy = 50.0
+spot_range = 4.44334
+spot_angle = 56.9805
+script = null

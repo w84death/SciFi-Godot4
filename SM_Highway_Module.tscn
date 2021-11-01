@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn20ad882b0lw"]
+
+[ext_resource type="PackedScene" uid="uid://ciwp23bshilwr" path="res://SM_Highway_Module.glb" id="1_1r0a7"]
+[ext_resource type="Material" uid="uid://voiwwv23jkyy" path="res://M_Cement.material" id="2_4mfdl"]
+[ext_resource type="Material" uid="uid://divhpl5m2muv7" path="res://M_Metal.material" id="3_6mwmt"]
+[ext_resource type="Material" uid="uid://of0aya0c628o" path="res://M_Light_Beacon.material" id="4_o2v7k"]
+[ext_resource type="Material" uid="uid://crq8ecdimsgra" path="res://M_Light_Energinzer.material" id="5_enrvb"]
+[ext_resource type="Material" uid="uid://dbv0ndxa2lx8p" path="res://M_Cable.material" id="5_icudo"]
+[ext_resource type="Material" uid="uid://celcw55ml7kdx" path="res://M_Light_Street.material" id="6_mct2b"]
+
+[node name="SM_Highway_Module" instance=ExtResource( "1_1r0a7" )]
+
+[node name="Highway_Module" parent="." index="0"]
+surface_material_override/0 = ExtResource( "2_4mfdl" )
+surface_material_override/1 = ExtResource( "3_6mwmt" )
+surface_material_override/2 = ExtResource( "4_o2v7k" )
+surface_material_override/3 = ExtResource( "5_enrvb" )
+
+[node name="Cables" parent="Highway_Module" index="0"]
+visible = false
+surface_material_override/0 = ExtResource( "3_6mwmt" )
+surface_material_override/1 = ExtResource( "5_icudo" )
+
+[node name="Cables2" parent="Highway_Module" index="1"]
+surface_material_override/0 = ExtResource( "5_icudo" )
+
+[node name="Cables3" parent="Highway_Module" index="2"]
+surface_material_override/0 = ExtResource( "5_icudo" )
+
+[node name="Cables4" parent="Highway_Module" index="3"]
+surface_material_override/0 = ExtResource( "5_icudo" )
+
+[node name="Lamps" parent="Highway_Module" index="5"]
+surface_material_override/0 = ExtResource( "2_4mfdl" )
+surface_material_override/1 = ExtResource( "6_mct2b" )
