@@ -1,4 +1,4 @@
-# Godot-specific ignores
+﻿# Godot-specific ignores
 .import/
 .godot/
 export.cfg
